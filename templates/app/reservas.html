@@ -1,0 +1,58 @@
+{%extends 'app/base.html'%}
+
+{% block content %}
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    #servicios {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 20px;
+    }
+
+    .servicio {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .servicio h2 {
+        margin-top: 0;
+    }
+
+    .servicio button {
+        background-color: rgb(255, 166, 240);
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        margin-top: 20px;
+    }
+
+    .servicio button:hover {
+        background-color: rgb(255, 214, 248);
+    }
+</style>
+</head>
+<body>
+    <h1>Agenda de servicios</h1>
+    <hr>
+    <div id="servicios">
+        {% for servicio in servicios %}
+        <div class="servicio">
+            <h2>{{servicio.nombre}}</h2>
+            <p>Precio: ${{servicio.precio}}</p>
+            <button onclick="">Agendar</button>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</body>
+</html>
+{% endblock content %}

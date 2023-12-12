@@ -1,0 +1,37 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block content %}
+    <h1 class="title text-center display-3 mb-5">Acerca de nosotros</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <p>La peluquería se encuentra en el corazón de un barrio popular y ostenta una antigüedad de 22 años, sirviendo a los residentes y clientes de diversos sectores de Valdivia. Se ha creado un ambiente acogedor y familiar, donde la principal preocupación siempre ha sido dejar completamente satisfechos a los clientes con los estilos de servicio requeridos, ya sea en cortes, colores o barbas según la solicitud.</p>
+            <br>
+            <p>La estilista se destaca por su habilidad para crear colores exclusivos en tonos personalizados. La peluquería ofrece una atención cercana incluso a los niños y bebés, con obsequios adaptados a su edad. Además, se proporcionan cafés o jugos para los clientes durante los tiempos de espera. La característica distintiva de esta peluquería es su longevidad en el sector y la cálida acogida que brindan a los clientes, quienes quedan muy satisfechos con el servicio prestado.</p>
+            <br>
+            <p>Los clientes son los principales portadores de la publicidad de la peluquería y su fidelidad a lo largo de tantos años ha sido fundamental para su permanencia. La estilista se mantiene constantemente actualizada, capacitándose en los últimos estilos, tanto en cortes como en colorimetría y barbas, así como en el uso de nuevos productos.</p>    
+        </div>
+        <div class="col-md-6">
+            <div class="imagen-container cl">
+                <img src="{%static 'images/imagen_1.jpeg'%}" alt="Imagen 1" class="fotosxd" />
+  
+            </div>
+        
+            <script>
+                var imagenes = document.querySelectorAll('.imagen-container img');
+                var index = 0;
+        
+                function cambiarImagen() {
+                    imagenes[index].style.opacity = 0;
+                    index = (index + 1) % imagenes.length;
+                    imagenes[index].style.opacity = 1;
+                }
+        
+                setInterval(cambiarImagen, 5000);  // Cambia la imagen cada 5 segundos (ajusta según tus necesidades)
+            </script>
+        </div>
+    
+
+    </div>
+
+
+{% endblock content %}

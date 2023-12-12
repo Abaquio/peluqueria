@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <h1 class="title text-center display-3">Servicios</h1>
+    <hr>
+    <div class="containter mt-12 mb-6">
+        <table class="table">
+            <thead class="thead-ligh">
+                <tr>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for serv in servicios %}
+                <tr>
+                    <td>{{serv.nombre}}</td>
+                    <td>{{serv.descripcion}}</td>
+                    <td>${{serv.precio}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        <br>
+        <br>
+
+    </div>
+{% endblock content %}
